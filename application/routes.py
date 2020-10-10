@@ -139,8 +139,8 @@ def login():
     try:
         username = request.json.get('username')
         password = request.json.get('password')
-    except AttributeError:
-        return "Username or password are missing in the request.", 400
+    except AttributeError as e:
+        return e.message, 400
 
     user = db_utils.get_user(username)
 
