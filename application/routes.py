@@ -6,12 +6,8 @@ from flask_jwt_extended import (
     jwt_refresh_token_required, get_raw_jwt
 )
 import application.db_utils as db_utils
-import logging
 
 routes_bp = Blueprint('routes_bp', __name__)
-logging.basicConfig(filename='messenger.log',
-                    level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
 
 @routes_bp.route('/')
